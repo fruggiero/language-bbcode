@@ -1,0 +1,30 @@
+".text.bbcode":
+  "Code (code)":
+    prefix: "code"
+    body: "[code${1:=${2:ruby}}]$3[/code]$0"
+  "Image (img)":
+    prefix: "img"
+    body: "[img]$1[/img]$0"
+  "Link (url)":
+    prefix: "url"
+    body: "[url=$1]${2:$1}[/url]$0"
+  "List Item":
+    prefix: "-"
+    body: "[*] $1"
+  "Ordered List":
+    prefix: "1"
+    body: '''
+      [list=1]
+      [*] $1
+      [/list]
+    '''
+  Quote:
+    prefix: "quote"
+    body: "[quote=$1]${2:$TM_SELECTED_TEXT}[/quote]"
+  "Unordered List":
+    prefix: "*"
+    body: '''
+      [list]
+      [*] $1
+      [/list]
+    '''

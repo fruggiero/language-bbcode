@@ -1,0 +1,182 @@
+fileTypes: [
+  "safari"
+  "bbcode"
+  "bb"
+]
+foldingStartMarker: "\\[[^/][^\\]]+\\]"
+foldingStopMarker: "\\[/[^/\\]]+\\]"
+name: "BBCode"
+patterns: [
+  {
+    begin: "\\[code=ruby\\]"
+    captures:
+      "0":
+        name: "meta.tag.code.ruby.bbcode"
+    end: "\\[/code\\]"
+    name: "source.ruby.embedded.bbcode"
+    patterns: [
+      {
+        include: "source.ruby"
+      }
+    ]
+  }
+  {
+    begin: "\\[code=html\\]"
+    captures:
+      "0":
+        name: "meta.tag.code.html.bbcode"
+    end: "\\[/code\\]"
+    name: "text.html.embedded.bbcode"
+    patterns: [
+      {
+        include: "text.html.basic"
+      }
+    ]
+  }
+  {
+    begin: "\\[code=rhtml\\]"
+    captures:
+      "0":
+        name: "meta.tag.code.rhtml.bbcode"
+    end: "\\[/code\\]"
+    name: "text.rhtml.embedded.bbcode"
+    patterns: [
+      {
+        include: "text.html.ruby"
+      }
+    ]
+  }
+  {
+    begin: "\\[code=(js|javascript)\\]"
+    captures:
+      "0":
+        name: "meta.tag.code.js.bbcode"
+    end: "\\[/code\\]"
+    name: "source.js.embedded.bbcode"
+    patterns: [
+      {
+        include: "source.js"
+      }
+    ]
+  }
+  {
+    begin: "\\[code=(css|stylesheet)\\]"
+    captures:
+      "0":
+        name: "meta.tag.code.css.bbcode"
+    end: "\\[/code\\]"
+    name: "source.css.embedded.bbcode"
+    patterns: [
+      {
+        include: "source.css"
+      }
+    ]
+  }
+  {
+    begin: "\\[code=php\\]"
+    captures:
+      "0":
+        name: "meta.tag.code.php.bbcode"
+    end: "\\[/code\\]"
+    name: "source.php.embedded.bbcode"
+    patterns: [
+      {
+        include: "source.php"
+      }
+    ]
+  }
+  {
+    begin: "\\[code=python\\]"
+    captures:
+      "0":
+        name: "meta.tag.code.python.bbcode"
+    end: "\\[/code\\]"
+    name: "source.python.embedded.bbcode"
+    patterns: [
+      {
+        include: "source.python"
+      }
+    ]
+  }
+  {
+    begin: "\\[code=perl\\]"
+    captures:
+      "0":
+        name: "meta.tag.code.perl.bbcode"
+    end: "\\[/code\\]"
+    name: "source.perl.embedded.bbcode"
+    patterns: [
+      {
+        include: "source.perl"
+      }
+    ]
+  }
+  {
+    begin: "\\[code=sql\\]"
+    captures:
+      "0":
+        name: "meta.tag.code.sql.bbcode"
+    end: "\\[/code\\]"
+    name: "source.sql.embedded.bbcode"
+    patterns: [
+      {
+        include: "source.sql"
+      }
+    ]
+  }
+  {
+    begin: "\\[code=java\\]"
+    captures:
+      "0":
+        name: "meta.tag.code.java.bbcode"
+    end: "\\[/code\\]"
+    name: "source.java.embedded.bbcode"
+    patterns: [
+      {
+        include: "source.java"
+      }
+    ]
+  }
+  {
+    begin: "\\[code=c\\]"
+    captures:
+      "0":
+        name: "meta.tag.code.c.bbcode"
+    end: "\\[/code\\]"
+    name: "source.c.embedded.bbcode"
+    patterns: [
+      {
+        include: "source.c"
+      }
+    ]
+  }
+  {
+    begin: "\\[code=yaml\\]"
+    captures:
+      "0":
+        name: "meta.tag.code.yaml.bbcode"
+    end: "\\[/code\\]"
+    name: "source.yaml.embedded.bbcode"
+    patterns: [
+      {
+        include: "source.yaml"
+      }
+    ]
+  }
+  {
+    match: "\\[/?[^\\]]+\\]"
+    name: "meta.tag.any.bbcode"
+  }
+  {
+    begin: "\""
+    end: "\""
+    name: "string.quoted.double.untitled"
+    patterns: [
+      {
+        match: "\\\\."
+        name: "constant.character.escape.untitled"
+      }
+    ]
+  }
+]
+scopeName: "text.html.bbcode"
