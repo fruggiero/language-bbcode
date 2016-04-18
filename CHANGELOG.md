@@ -1,3 +1,3 @@
 ## 0.1.0 - First Release
-* Every feature added
-* Every bug fixed
+* Support for js, ruby , html, css, python, perl , Java, sql, c, yaml
+  and php language beetween the **code** tags  
