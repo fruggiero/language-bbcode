@@ -1,11 +1,9 @@
 fileTypes: [
-  "safari"
   "bbcode"
   "bb"
 ]
-foldingStartMarker: "\\[[^/][^\\]]+\\]"
-foldingStopMarker: "\\[/[^/\\]]+\\]"
 name: "BBCode"
+scopeName: "text.bbcode"
 patterns: [
   {
     begin: "\\[code=ruby\\]"
@@ -170,13 +168,23 @@ patterns: [
   {
     begin: "\""
     end: "\""
-    name: "string.quoted.double.untitled"
+    name: "string.quoted.double"
     patterns: [
       {
         match: "\\\\."
-        name: "constant.character.escape.untitled"
+        name: "constant.character.escape"
+      }
+    ]
+  }
+  {
+    begin: "\'"
+    end: "\'"
+    name: "string.quoted.single"
+    patterns: [
+      {
+        match: "\\\\."
+        name: "constant.character.escape"
       }
     ]
   }
 ]
-scopeName: "text.html.bbcode"
