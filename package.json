@@ -4,7 +4,7 @@
   "description": "BBCode grammar package for atom",
   "keywords": [
   ],
-  "repository": "https://github.com/atom/language-bbcode",
+  "repository": "https://github.com/fruggiero/language-bbcode",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
