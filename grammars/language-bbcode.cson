@@ -162,29 +162,50 @@ patterns: [
     ]
   }
   {
-    match: "\\[/?[^\\]]+\\]"
+    begin: "(\\[)"
+    end: "(\\])"
     name: "meta.tag.any.bbcode"
-  }
-  {
-    begin: "\""
-    end: "\""
-    name: "string.quoted.double"
     patterns: [
       {
-        match: "\\\\."
-        name: "constant.character.escape"
+        include: "#double_quoted_string"
+      }
+      {
+        include: "#single_quoted_string"
       }
     ]
   }
-  {
-    begin: "\'"
-    end: "\'"
-    name: "string.quoted.single"
-    patterns: [
-      {
-        match: "\\\\."
-        name: "constant.character.escape"
-      }
-    ]
-  }
+  # {
+  #   match: "\\[/[^\\]]+\\]"
+  #   name: "meta.tag.any.bbcode"
+  #   disabled: 1
+  # }
 ]
+repository:
+  'double_quoted_string':
+    patterns: [
+      {
+        begin: "\""
+        end: "\""
+        name: "string.quoted.double"
+        patterns: [
+          {
+            match: "\\\\."
+            name: "constant.character.escape"
+          }
+       ]
+      }
+    ]
+  'single_quoted_string':
+    patterns: [
+      {
+        begin: "\'"
+        end: "\'"
+        name: "string.quoted.single"
+        patterns: [
+          {
+            match: "\\\\."
+            name: "constant.character.escape"
+          }
+        ]
+      }
+    ]
